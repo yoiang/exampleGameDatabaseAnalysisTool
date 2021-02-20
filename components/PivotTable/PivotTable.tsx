@@ -1,13 +1,13 @@
 import { useState } from 'react'
 
-import PivotTableUI from 'react-pivottable/PivotTableUI'
+import ReactPivotTable from 'react-pivottable/PivotTable'
 import 'react-pivottable/pivottable.css'
 
 import TableRenderers from 'react-pivottable/TableRenderers'
 import Plotly from 'react-plotly.js'
 import createPlotlyRenderers from 'react-pivottable/PlotlyRenderers'
 
-import { requireFields } from '../utility/dataProcessing'
+import { requireFields } from '../../utility/dataProcessing'
 import { Props } from './PivotTableShared'
 
 const plotlyRenderers = createPlotlyRenderers(Plotly)
@@ -44,7 +44,7 @@ export const PivotTable = ({
     })
   }
   return (
-    <PivotTableUI
+    <ReactPivotTable
       data={cleanedData}
       onChange={setPivotState}
       renderers={renderers}

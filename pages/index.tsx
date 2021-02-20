@@ -7,7 +7,7 @@ import { getDatabase } from './api/database'
 
 import GlobalCSS from '../components/GlobalCSS'
 import Head from '../components/Head'
-import PivotTable from '../components/PivotTableSSR'
+import PivotTable from '../components/PivotTable/PivotTableUISSR'
 import RawTable from '../components/RawTable'
 import { theme } from '../config/theme'
 import Examples from '../components/Examples'
@@ -39,7 +39,7 @@ export const Home = ({ databaseRows }: StaticProps): JSX.Element => {
 
   return (
     <Grommet full theme={theme}>
-      <Head pageTitle="Pivot Table" />
+      <Head pageTitle="Game Database" />
 
       <Tabs a11yTitle="Main navigation" alignControls="start" flex>
         {tabs.map((tab, index) => (
