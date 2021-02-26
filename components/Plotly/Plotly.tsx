@@ -4,6 +4,8 @@ import { useResizeDetector } from 'react-resize-detector'
 
 export const Plotly = (props: PlotParams): JSX.Element => {
   const { width, height, ref } = useResizeDetector()
+  const mutableRef = ref as React.MutableRefObject<HTMLInputElement>
+
   const responsiveProps = Object.assign({}, props)
   if (!responsiveProps.layout) {
     responsiveProps.layout = {}
@@ -16,7 +18,7 @@ export const Plotly = (props: PlotParams): JSX.Element => {
   responsiveProps.config.displaylogo = false
   responsiveProps.config.responsive = true
   return (
-    <div ref={ref} style={{ width: '100%', height: '100%' }}>
+    <div ref={mutableRef} style={{ width: '100%', height: '100%' }}>
       <ReactPlotly {...responsiveProps} />
     </div>
   )
